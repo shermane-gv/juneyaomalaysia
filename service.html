@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>After Sales Service — JuneYao Auto Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root{--blue:#0A84FF;--blue-dim:#0062CC;--sky:#A8D4FF;--black:#060608;--dark:#0E0E12;--panel:#13131A;--muted:#6B7280;--white:#F0F4FF;--accent:#00E5FF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(6,6,8,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;border:2px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--blue);}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;color:var(--white);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(240,244,255,0.6);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 22px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;}
+
+.page-hero{padding:140px 60px 80px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,#060A0F 0%,var(--black) 100%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(10,132,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,132,255,0.04) 1px,transparent 1px);background-size:50px 50px;}
+.label{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;position:relative;}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);letter-spacing:0.04em;position:relative;}
+.page-hero h1 span{color:var(--blue);}
+.page-hero p{color:rgba(240,244,255,0.5);font-size:0.88rem;max-width:500px;margin:16px auto 0;line-height:1.9;position:relative;}
+
+.warranty-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+.w-item{padding:48px 40px;border-right:1px solid rgba(255,255,255,0.06);text-align:center;}
+.w-item:last-child{border-right:none;}
+.w-val{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--blue);line-height:1;}
+.w-unit{font-size:1.1rem;color:var(--sky);}
+.w-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+.w-sub{font-size:0.7rem;color:rgba(240,244,255,0.3);margin-top:4px;}
+
+.section{padding:80px 60px;}
+.section.dark{background:var(--dark);}
+.label-inline{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.label-inline::before{content:'';width:20px;height:1px;background:var(--accent);}
+.section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,3rem);letter-spacing:0.05em;margin-bottom:32px;}
+.section h2 span{color:var(--blue);}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.svc-card{background:var(--panel);padding:36px;transition:transform 0.3s,border-top 0.3s;border-top:2px solid transparent;}
+.svc-card:hover{transform:translateY(-4px);border-top-color:var(--blue);}
+.svc-icon{font-size:2rem;margin-bottom:16px;}
+.svc-card h3{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);margin-bottom:10px;}
+.svc-card p{font-size:0.75rem;color:var(--muted);line-height:1.8;}
+
+.warranty-table{width:100%;border-collapse:collapse;margin-top:32px;}
+.warranty-table tr{border-bottom:1px solid rgba(255,255,255,0.06);}
+.warranty-table tr:hover{background:rgba(10,132,255,0.03);}
+.warranty-table td{padding:16px 0;font-size:0.82rem;}
+.warranty-table td:first-child{color:var(--muted);width:50%;}
+.warranty-table td:last-child{color:var(--white);}
+.warranty-table td span{color:var(--blue);}
+
+.centres{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
+.centre-card{background:var(--panel);padding:28px;border-left:2px solid var(--blue);}
+.centre-card h4{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);margin-bottom:8px;}
+.centre-card p{font-size:0.75rem;color:var(--muted);line-height:1.7;}
+.centre-card a{color:var(--blue);text-decoration:none;font-size:0.75rem;}
+
+.btn-primary{display:inline-block;background:var(--blue);color:#fff;padding:13px 32px;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background 0.3s;margin-top:24px;}
+.btn-primary:hover{background:var(--blue-dim);}
+
+footer{background:var(--panel);border-top:1px solid rgba(255,255,255,0.06);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:0.72rem;color:var(--muted);}
+
+@media(max-width:768px){nav{padding:16px 20px;}.nav-links{display:none;}.page-hero,.section{padding-left:20px;padding-right:20px;}.warranty-strip,.service-grid,.centres{grid-template-columns:1fr;}footer{flex-direction:column;gap:12px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <ul class="nav-links">
+    <li><a href="vehicle.html">JY AIR</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="service.html" class="active">Service</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="reserve.html" class="nav-cta">Book Test Drive</a>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-grid"></div>
+  <span class="label">After Sales</span>
+  <h1>WE'VE GOT <span>YOU COVERED</span></h1>
+  <p>Industry-leading 8-year warranty. 24-hour roadside assistance. Full spare parts stock. Peace of mind, from day one.</p>
+</div>
+
+<div class="warranty-strip">
+  <div class="w-item"><div class="w-val">8<span class="w-unit">yr</span></div><div class="w-label">Vehicle & Motor Warranty</div><div class="w-sub">or 150,000 km</div></div>
+  <div class="w-item"><div class="w-val">800K<span class="w-unit">km</span></div><div class="w-label">Battery Warranty</div><div class="w-sub">8 years or 800,000 km</div></div>
+  <div class="w-item"><div class="w-val">24<span class="w-unit">hr</span></div><div class="w-label">Emergency Assistance</div><div class="w-sub">8 years coverage</div></div>
+</div>
+
+<section class="section">
+  <div class="label-inline">Our Services</div>
+  <h2>COMPLETE <span>CARE</span></h2>
+  <div class="service-grid">
+    <div class="svc-card"><div class="svc-icon">🔧</div><h3>Scheduled Maintenance</h3><p>Full EV servicing by JuneYao-certified technicians. Transparent pricing, genuine parts, comprehensive inspection at every visit.</p></div>
+    <div class="svc-card"><div class="svc-icon">🚨</div><h3>24-Hour Roadside Assist</h3><p>Stranded anywhere in Malaysia? Our emergency team will reach you within the hour, up to 100 km from your breakdown location.</p></div>
+    <div class="svc-card"><div class="svc-icon">⚡</div><h3>Battery Health Check</h3><p>Periodic battery diagnostics included in all service visits. We monitor cell health, charge efficiency, and degradation over time.</p></div>
+    <div class="svc-card"><div class="svc-icon">📱</div><h3>Over-the-Air Updates</h3><p>Crystal OS and all vehicle software are updated automatically via OTA — no workshop visit needed for software improvements.</p></div>
+    <div class="svc-card"><div class="svc-icon">🏠</div><h3>Home Charger Support</h3><p>We installed your home charger free at purchase. Our team is available for maintenance, troubleshooting, and upgrades anytime.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔄</div><h3>Genuine Spare Parts</h3><p>Full stock of JY AIR spare parts maintained at all service centres in Malaysia. No waiting, no substitutes.</p></div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="label-inline">Warranty</div>
+  <h2>WHAT'S <span>COVERED</span></h2>
+  <table class="warranty-table">
+    <tr><td>Vehicle (Body & Chassis)</td><td><span>8 years</span> or 150,000 km</td></tr>
+    <tr><td>Electric Motor</td><td><span>8 years</span> or 150,000 km</td></tr>
+    <tr><td>High-Voltage Battery (Standard)</td><td><span>8 years</span> or 800,000 km</td></tr>
+    <tr><td>High-Voltage Battery (Plus/Max)</td><td><span>8 years</span> or 800,000 km</td></tr>
+    <tr><td>Emergency Roadside Assistance</td><td><span>8 years</span> — up to 100 km per call</td></tr>
+    <tr><td>Crystal OS & Software</td><td>Lifetime OTA updates</td></tr>
+    <tr><td>AC Home Charger (included at purchase)</td><td><span>2 years</span> parts & labour</td></tr>
+  </table>
+</section>
+
+<section class="section">
+  <div class="label-inline">Service Centres</div>
+  <h2>FIND A <span>CENTRE</span></h2>
+  <p style="font-size:0.83rem;color:rgba(240,244,255,0.5);line-height:1.9;max-width:600px;">Our authorised service centres are strategically located across the Klang Valley, with expansion to Penang and Johor Bahru in 2025.</p>
+  <div class="centres">
+    <div class="centre-card"><h4>Kuala Lumpur (HQ)</h4><p>Jalan Ampang, 50450 Kuala Lumpur<br>Mon–Sat: 8AM – 6PM · Sun: 9AM – 3PM<br><a href="tel:+60321108800">+60 3-2110 8800</a></p></div>
+    <div class="centre-card"><h4>Petaling Jaya</h4><p>SS2, 47300 Petaling Jaya, Selangor<br>Mon–Sat: 8AM – 6PM<br><a href="tel:+60378808800">+60 3-7880 8800</a></p></div>
+    <div class="centre-card"><h4>Shah Alam</h4><p>Section 15, 40200 Shah Alam, Selangor<br>Mon–Sat: 8AM – 6PM<br><a href="tel:+60355088800">+60 3-5508 8800</a></p></div>
+    <div class="centre-card"><h4>Penang (Coming 2025)</h4><p>Georgetown, Pulau Pinang<br>Opening Q3 2025<br><a href="contact.html">Register Interest →</a></p></div>
+  </div>
+  <a href="contact.html" class="btn-primary">Contact Service Team</a>
+</section>
+
+<footer>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <p>© 2024 JuneYao Auto Malaysia Sdn. Bhd. · All rights reserved</p>
+</footer>
+</body>
+</html>

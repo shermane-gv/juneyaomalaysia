@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — JuneYao Auto Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root{--blue:#0A84FF;--blue-dim:#0062CC;--sky:#A8D4FF;--black:#060608;--dark:#0E0E12;--panel:#13131A;--muted:#6B7280;--white:#F0F4FF;--accent:#00E5FF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(6,6,8,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;border:2px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--blue);}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;color:var(--white);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(240,244,255,0.6);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 22px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;}
+
+.page-hero{padding:140px 60px 60px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);}
+.label{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);letter-spacing:0.04em;}
+.page-hero h1 span{color:var(--blue);}
+.page-hero p{color:rgba(240,244,255,0.5);font-size:0.88rem;max-width:440px;margin:12px auto 0;line-height:1.9;}
+
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;}
+.contact-info{padding:80px 64px;background:var(--dark);border-right:1px solid rgba(255,255,255,0.06);}
+.contact-info h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;margin-bottom:36px;}
+.c-item{display:flex;gap:16px;margin-bottom:32px;align-items:flex-start;}
+.c-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:8px;}
+.c-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.c-val{font-size:0.85rem;color:var(--white);line-height:1.7;}
+.c-val a{color:var(--blue);text-decoration:none;}
+
+.quick-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:40px;}
+.ql{padding:14px;border:1px solid rgba(255,255,255,0.08);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:all 0.3s;text-align:center;}
+.ql:hover{border-color:var(--blue);color:var(--accent);}
+
+.contact-form{padding:80px 64px;}
+.contact-form h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;margin-bottom:6px;}
+.form-sub{font-size:0.75rem;color:var(--muted);margin-bottom:36px;}
+.form-group{margin-bottom:22px;}
+.form-group label{display:block;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);color:var(--white);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:300;outline:none;transition:border-color 0.3s;-webkit-appearance:none;appearance:none;border-radius:0;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(240,244,255,0.2);}
+.form-group select option{background:var(--black);}
+.form-group textarea{resize:vertical;min-height:110px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.submit-btn{width:100%;background:var(--blue);color:#fff;padding:14px;font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;border:none;cursor:pointer;transition:background 0.3s;margin-top:4px;}
+.submit-btn:hover{background:var(--blue-dim);}
+.success{display:none;text-align:center;padding:40px 0;}
+.success h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blue);letter-spacing:0.06em;margin-bottom:8px;}
+.success p{font-size:0.8rem;color:var(--muted);line-height:1.8;}
+
+.social-bar{padding:40px 60px;background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;}
+.social-bar p{font-size:0.8rem;color:var(--muted);}
+.socials{display:flex;gap:12px;}
+.social-btn{padding:8px 18px;border:1px solid rgba(255,255,255,0.1);color:var(--muted);text-decoration:none;font-size:0.68rem;letter-spacing:0.12em;transition:all 0.3s;}
+.social-btn:hover{border-color:var(--blue);color:var(--accent);}
+
+footer{background:var(--panel);border-top:1px solid rgba(255,255,255,0.06);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:0.72rem;color:var(--muted);}
+
+@media(max-width:768px){nav{padding:16px 20px;}.nav-links{display:none;}.contact-wrap{grid-template-columns:1fr;}.contact-info,.contact-form{padding:60px 20px;}.page-hero{padding-left:20px;padding-right:20px;}.social-bar{flex-direction:column;gap:16px;padding:32px 20px;}.socials{flex-wrap:wrap;justify-content:center;}footer{flex-direction:column;gap:12px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <ul class="nav-links">
+    <li><a href="vehicle.html">JY AIR</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="reserve.html" class="nav-cta">Book Test Drive</a>
+</nav>
+
+<div class="page-hero">
+  <span class="label">Get in Touch</span>
+  <h1>CONTACT <span>US</span></h1>
+  <p>Sales, service, media, or general enquiries — we're here. Response within one business day.</p>
+</div>
+
+<div class="contact-wrap">
+  <div class="contact-info">
+    <h2>Our Details</h2>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">Showroom & HQ</div>
+        <div class="c-val">Jalan Ampang, 50450<br>Kuala Lumpur, Malaysia</div>
+      </div>
+    </div>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">Sales Enquiries</div>
+        <div class="c-val"><a href="tel:+60321108888">+60 3-2110 8888</a></div>
+      </div>
+    </div>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">Email</div>
+        <div class="c-val"><a href="mailto:hello@juneyaomy.com">hello@juneyaomy.com</a></div>
+      </div>
+    </div>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">WhatsApp</div>
+        <div class="c-val"><a href="#">+60 12-888 8888</a> (preferred)</div>
+      </div>
+    </div>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">Showroom Hours</div>
+        <div class="c-val">Mon–Sat: 10:00 AM – 7:00 PM<br>Sunday: 11:00 AM – 5:00 PM</div>
+      </div>
+    </div>
+    <div class="c-item">
+      <div class="c-dot"></div>
+      <div>
+        <div class="c-label">Service Centre</div>
+        <div class="c-val"><a href="service.html">View all service centres →</a></div>
+      </div>
+    </div>
+    <div class="quick-links">
+      <a href="reserve.html" class="ql">Book Test Drive</a>
+      <a href="service.html" class="ql">After Sales</a>
+      <a href="vehicle.html" class="ql">JY AIR Specs</a>
+      <a href="about.html" class="ql">About Us</a>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+    <div class="form-sub">For sales, media, partnerships, or general enquiries</div>
+    <div id="cform">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Ahmad"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Razali"/></div>
+      </div>
+      <div class="form-group"><label>Email *</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" placeholder="+60 12-345 6789"/></div>
+      <div class="form-group">
+        <label>Enquiry Type</label>
+        <select>
+          <option value="" disabled selected>Select type</option>
+          <option>Sales — JY AIR Purchase</option>
+          <option>Test Drive Request</option>
+          <option>After Sales / Service</option>
+          <option>Media & Press</option>
+          <option>Business Partnership</option>
+          <option>Dealer / Reseller Enquiry</option>
+          <option>General Question</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message *</label><textarea placeholder="Tell us how we can help..."></textarea></div>
+      <button class="submit-btn" onclick="submitContact()">Send Message →</button>
+    </div>
+    <div class="success" id="csuccess">
+      <h3>MESSAGE SENT</h3>
+      <p>Thank you for reaching out. Our team will respond within one business day. For urgent matters, please WhatsApp us directly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="social-bar">
+  <p>Follow JuneYao Auto Malaysia</p>
+  <div class="socials">
+    <a href="#" class="social-btn">Instagram</a>
+    <a href="#" class="social-btn">Facebook</a>
+    <a href="#" class="social-btn">TikTok</a>
+    <a href="#" class="social-btn">YouTube</a>
+    <a href="#" class="social-btn">WhatsApp Channel</a>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <p>© 2024 JuneYao Auto Malaysia Sdn. Bhd. · All rights reserved</p>
+</footer>
+
+<script>
+function submitContact(){
+  document.getElementById('cform').style.display='none';
+  document.getElementById('csuccess').style.display='block';
+}
+</script>
+</body>
+</html>

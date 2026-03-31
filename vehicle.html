@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JY AIR — Full Specifications | JuneYao Auto Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root{--blue:#0A84FF;--blue-dim:#0062CC;--sky:#A8D4FF;--black:#060608;--dark:#0E0E12;--panel:#13131A;--muted:#6B7280;--white:#F0F4FF;--accent:#00E5FF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(6,6,8,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;border:2px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--blue);}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;color:var(--white);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(240,244,255,0.6);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 22px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;font-weight:500;}
+.nav-cta:hover{background:var(--blue-dim);}
+
+.page-hero{padding:140px 60px 80px;background:linear-gradient(180deg,#060B14 0%,var(--black) 100%);text-align:center;position:relative;overflow:hidden;}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(10,132,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(10,132,255,0.05) 1px,transparent 1px);background-size:50px 50px;}
+.label{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,9rem);letter-spacing:0.06em;position:relative;}
+.page-hero h1 span{color:var(--blue);}
+.page-hero p{color:rgba(240,244,255,0.5);font-size:0.88rem;max-width:500px;margin:16px auto 0;line-height:1.9;position:relative;}
+
+/* COLOUR SELECTOR */
+.colour-section{padding:60px;background:var(--dark);}
+.colour-section h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:0.06em;margin-bottom:32px;}
+.colours{display:flex;gap:16px;flex-wrap:wrap;}
+.colour-btn{display:flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--white);cursor:pointer;transition:all 0.3s;font-family:'DM Sans',sans-serif;font-size:0.75rem;}
+.colour-btn.active,.colour-btn:hover{border-color:var(--blue);}
+.colour-dot{width:18px;height:18px;border-radius:50%;}
+
+/* VARIANT TABS */
+.variant-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:72px;background:var(--black);z-index:50;}
+.vtab{padding:20px 40px;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.3s;background:none;border-top:none;border-left:none;border-right:none;border-radius:0;}
+.vtab.active,.vtab:hover{color:var(--white);border-bottom-color:var(--blue);}
+
+/* SPEC SECTIONS */
+.spec-section{padding:80px 60px;display:none;}
+.spec-section.active{display:block;}
+.spec-hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px;}
+.spec-price{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--blue);}
+.spec-price span{font-size:1.5rem;color:var(--muted);font-family:'DM Sans',sans-serif;}
+.spec-tagline{font-size:0.85rem;color:rgba(240,244,255,0.5);line-height:1.9;margin:16px 0 28px;}
+.btn-primary{background:var(--blue);color:#fff;padding:13px 32px;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;font-weight:500;display:inline-block;transition:all 0.3s;}
+.btn-primary:hover{background:var(--blue-dim);}
+.spec-visual{background:var(--panel);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border:1px solid rgba(10,132,255,0.1);position:relative;overflow:hidden;}
+.spec-visual-text{font-family:'Bebas Neue',sans-serif;font-size:6rem;color:rgba(10,132,255,0.06);letter-spacing:0.1em;}
+
+/* KEY NUMBERS */
+.key-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:60px;}
+.kn{background:var(--panel);padding:32px;text-align:center;}
+.kn-val{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--blue);line-height:1;}
+.kn-unit{font-size:0.9rem;color:var(--sky);}
+.kn-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+
+/* FULL SPECS TABLE */
+.spec-table-wrap h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;margin-bottom:20px;color:var(--white);}
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:40px;}
+.spec-table tr{border-bottom:1px solid rgba(255,255,255,0.05);}
+.spec-table tr:hover{background:rgba(10,132,255,0.03);}
+.spec-table td{padding:14px 0;font-size:0.82rem;}
+.spec-table td:first-child{color:var(--muted);width:45%;}
+.spec-table td:last-child{color:var(--white);font-weight:400;}
+.spec-table .section-row td{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;color:var(--accent);padding-top:28px;}
+
+/* COLOURS PAGE */
+.colour-gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:0 60px 80px;}
+.col-card{background:var(--panel);padding:20px;cursor:pointer;border:1px solid transparent;transition:all 0.3s;}
+.col-card:hover{border-color:var(--blue);}
+.col-swatch{width:100%;aspect-ratio:3/2;border-radius:4px;margin-bottom:12px;}
+.col-name{font-size:0.72rem;letter-spacing:0.1em;color:var(--white);}
+.col-sub{font-size:0.65rem;color:var(--muted);margin-top:2px;}
+
+footer{background:var(--panel);border-top:1px solid rgba(255,255,255,0.06);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:0.72rem;color:var(--muted);}
+
+@media(max-width:768px){nav{padding:16px 20px;}.nav-links{display:none;}.page-hero,.spec-section,.colour-section{padding-left:20px;padding-right:20px;}.spec-hero{grid-template-columns:1fr;}.key-numbers{grid-template-columns:1fr 1fr;}.colour-gallery{grid-template-columns:1fr 1fr 1fr;padding-left:20px;padding-right:20px;}.vtab{padding:16px 18px;font-size:0.62rem;}footer{flex-direction:column;gap:12px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <ul class="nav-links">
+    <li><a href="vehicle.html" class="active">JY AIR</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="reserve.html" class="nav-cta">Book Test Drive</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <span class="label">The Electric Sedan</span>
+  <h1>JY <span>AIR</span></h1>
+  <p>Two variants. One vision. Aviation-inspired electric mobility, built for Malaysia's roads.</p>
+</div>
+
+<!-- VARIANT TABS -->
+<div class="variant-tabs">
+  <button class="vtab active" onclick="showVariant('standard',this)">JY AIR Standard</button>
+  <button class="vtab" onclick="showVariant('plus',this)">JY AIR Plus</button>
+  <button class="vtab" onclick="showVariant('compare',this)">Compare</button>
+  <button class="vtab" onclick="showVariant('colours',this)">Colours</button>
+</div>
+
+<!-- STANDARD -->
+<div class="spec-section active" id="standard">
+  <div class="spec-hero">
+    <div>
+      <span class="label">Entry Variant</span>
+      <div class="spec-price">RM 99,300<span> est.</span></div>
+      <p class="spec-tagline">430 km of range. 204 PS. Crystal OS intelligence. The complete electric sedan package at an accessible price point.</p>
+      <a href="reserve.html" class="btn-primary">Book Test Drive</a>
+    </div>
+    <div class="spec-visual"><div class="spec-visual-text">STANDARD</div></div>
+  </div>
+  <div class="key-numbers">
+    <div class="kn"><div class="kn-val">430<span class="kn-unit">km</span></div><div class="kn-label">NEDC Range</div></div>
+    <div class="kn"><div class="kn-val">204<span class="kn-unit">PS</span></div><div class="kn-label">Peak Power</div></div>
+    <div class="kn"><div class="kn-val">51<span class="kn-unit">kWh</span></div><div class="kn-label">Battery Capacity</div></div>
+    <div class="kn"><div class="kn-val">70<span class="kn-unit">kW</span></div><div class="kn-label">DC Fast Charge</div></div>
+  </div>
+  <div class="spec-table-wrap">
+    <h3>Full Specifications</h3>
+    <table class="spec-table">
+      <tr><td colspan="2" class="section-row">POWERTRAIN</td></tr>
+      <tr><td>Motor Type</td><td>Single Permanent Magnet Synchronous</td></tr>
+      <tr><td>Peak Power</td><td>204 PS (150 kW)</td></tr>
+      <tr><td>Peak Torque</td><td>250 Nm</td></tr>
+      <tr><td>Drive System</td><td>Rear-Wheel Drive (RWD)</td></tr>
+      <tr><td>0–100 km/h</td><td>&lt; 7.9 seconds</td></tr>
+      <tr><td>Top Speed</td><td>170 km/h</td></tr>
+      <tr><td colspan="2" class="section-row">BATTERY & CHARGING</td></tr>
+      <tr><td>Battery Type</td><td>CATL SENXING LFP Lithium Iron Phosphate</td></tr>
+      <tr><td>Battery Capacity</td><td>51 kWh (Cell-to-Pack CTP)</td></tr>
+      <tr><td>NEDC Range</td><td>430 km</td></tr>
+      <tr><td>AC Charging</td><td>Up to 7 kW</td></tr>
+      <tr><td>DC Fast Charging</td><td>Up to 70 kW</td></tr>
+      <tr><td colspan="2" class="section-row">DIMENSIONS</td></tr>
+      <tr><td>Length × Width × Height</td><td>4,550 × 1,860 × 1,515 mm</td></tr>
+      <tr><td>Wheelbase</td><td>2,800 mm</td></tr>
+      <tr><td>Drag Coefficient</td><td>0.23 Cd</td></tr>
+      <tr><td>Seating</td><td>5 Passengers</td></tr>
+      <tr><td colspan="2" class="section-row">SUSPENSION & WHEELS</td></tr>
+      <tr><td>Front Suspension</td><td>McPherson Strut</td></tr>
+      <tr><td>Rear Suspension</td><td>Five-Link Independent</td></tr>
+      <tr><td>Wheel Size</td><td>17" Alloy — 215/60 R17</td></tr>
+      <tr><td colspan="2" class="section-row">TECHNOLOGY & COMFORT</td></tr>
+      <tr><td>Operating System</td><td>Crystal OS (JuneYao in-house)</td></tr>
+      <tr><td>Infotainment Screen</td><td>15.6" Touchscreen</td></tr>
+      <tr><td>Processor</td><td>Qualcomm Snapdragon 8155</td></tr>
+      <tr><td>Instrument Cluster</td><td>10.25" LCD</td></tr>
+      <tr><td>Panoramic Roof</td><td>2.072 m² Glass Roof</td></tr>
+      <tr><td>Ambient Lighting</td><td>256-colour LED</td></tr>
+      <tr><td>Wireless Charging</td><td>Dual Wireless Charging Pads</td></tr>
+      <tr><td>Autonomous Drive</td><td>Level 2+ (Adaptive Cruise, Lane Keep, Blind Spot, Auto Park)</td></tr>
+      <tr><td colspan="2" class="section-row">SAFETY</td></tr>
+      <tr><td>Safety Rating</td><td>5-Star NCAP & E-NCAP</td></tr>
+      <tr><td>Platform</td><td>SKY Platform (Aerospace-grade structure)</td></tr>
+      <tr><td colspan="2" class="section-row">WARRANTY</td></tr>
+      <tr><td>Vehicle Warranty</td><td>8 years / 150,000 km</td></tr>
+      <tr><td>Motor Warranty</td><td>8 years / 150,000 km</td></tr>
+      <tr><td>Battery Warranty</td><td>8 years / 800,000 km (High-Voltage)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- PLUS -->
+<div class="spec-section" id="plus">
+  <div class="spec-hero">
+    <div>
+      <span class="label">Premium Variant</span>
+      <div class="spec-price">RM 113,600<span> est.</span></div>
+      <p class="spec-tagline">520 km range. 216 PS. 138 kW rapid charging. Seat ventilation. Memory seat. The ultimate JY AIR experience.</p>
+      <a href="reserve.html" class="btn-primary">Book Test Drive</a>
+    </div>
+    <div class="spec-visual"><div class="spec-visual-text">PLUS</div></div>
+  </div>
+  <div class="key-numbers">
+    <div class="kn"><div class="kn-val">520<span class="kn-unit">km</span></div><div class="kn-label">NEDC Range</div></div>
+    <div class="kn"><div class="kn-val">216<span class="kn-unit">PS</span></div><div class="kn-label">Peak Power</div></div>
+    <div class="kn"><div class="kn-val">64<span class="kn-unit">kWh</span></div><div class="kn-label">Battery Capacity</div></div>
+    <div class="kn"><div class="kn-val">138<span class="kn-unit">kW</span></div><div class="kn-label">DC Fast Charge</div></div>
+  </div>
+  <div class="spec-table-wrap">
+    <h3>Full Specifications — Plus Additions over Standard</h3>
+    <table class="spec-table">
+      <tr><td colspan="2" class="section-row">UPGRADES OVER STANDARD</td></tr>
+      <tr><td>Battery Capacity</td><td>64 kWh (vs 51 kWh Standard)</td></tr>
+      <tr><td>NEDC Range</td><td>520 km (vs 430 km Standard)</td></tr>
+      <tr><td>Peak Power</td><td>216 PS / 159 kW (vs 204 PS Standard)</td></tr>
+      <tr><td>DC Fast Charging</td><td>138 kW (vs 70 kW Standard)</td></tr>
+      <tr><td>Wheel Size</td><td>19" Alloy — 235/45 R19</td></tr>
+      <tr><td>Front Seat Ventilation</td><td>Included (Standard: Not included)</td></tr>
+      <tr><td>Driver Memory Seat</td><td>Position memory included</td></tr>
+      <tr><td>Rear Seat</td><td>Premium rear bench with centre armrest</td></tr>
+      <tr><td colspan="2" class="section-row">ALL STANDARD SPECS INCLUDED PLUS ABOVE</td></tr>
+      <tr><td>Motor Type</td><td>Single Permanent Magnet Synchronous</td></tr>
+      <tr><td>0–100 km/h</td><td>&lt; 7.9 seconds</td></tr>
+      <tr><td>Top Speed</td><td>170 km/h</td></tr>
+      <tr><td>Dimensions</td><td>4,550 × 1,860 × 1,515 mm</td></tr>
+      <tr><td>Wheelbase</td><td>2,800 mm</td></tr>
+      <tr><td>Crystal OS</td><td>15.6" Touchscreen + Snapdragon 8155</td></tr>
+      <tr><td>Panoramic Roof</td><td>2.072 m²</td></tr>
+      <tr><td>Safety</td><td>5-Star NCAP & E-NCAP</td></tr>
+      <tr><td>Warranty</td><td>8 years / 150,000 km (Vehicle + Motor)</td></tr>
+      <tr><td>Battery Warranty</td><td>8 years / 800,000 km</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<div class="spec-section" id="compare">
+  <div style="overflow-x:auto;padding-bottom:20px;">
+    <table class="spec-table" style="min-width:600px;">
+      <thead>
+        <tr style="border-bottom:2px solid rgba(10,132,255,0.3);">
+          <td style="color:var(--muted);padding-bottom:20px;"> </td>
+          <td style="color:var(--white);font-weight:500;font-size:1rem;padding-bottom:20px;">JY AIR Standard</td>
+          <td style="color:var(--blue);font-weight:500;font-size:1rem;padding-bottom:20px;">JY AIR Plus ★</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3" class="section-row">PRICE & RANGE</td></tr>
+        <tr><td>Estimated Price (Malaysia)</td><td>RM 99,300</td><td style="color:var(--blue)">RM 113,600</td></tr>
+        <tr><td>NEDC Range</td><td>430 km</td><td style="color:var(--blue)">520 km</td></tr>
+        <tr><td colspan="3" class="section-row">POWERTRAIN</td></tr>
+        <tr><td>Peak Power</td><td>204 PS</td><td style="color:var(--blue)">216 PS</td></tr>
+        <tr><td>Torque</td><td>250 Nm</td><td>250 Nm</td></tr>
+        <tr><td>Battery</td><td>51 kWh</td><td style="color:var(--blue)">64 kWh</td></tr>
+        <tr><td>DC Fast Charging</td><td>70 kW</td><td style="color:var(--blue)">138 kW</td></tr>
+        <tr><td>AC Charging</td><td>7 kW</td><td>7 kW</td></tr>
+        <tr><td colspan="3" class="section-row">WHEELS & RIDE</td></tr>
+        <tr><td>Wheel Size</td><td>17" — 215/60 R17</td><td style="color:var(--blue)">19" — 235/45 R19</td></tr>
+        <tr><td colspan="3" class="section-row">COMFORT EXTRAS</td></tr>
+        <tr><td>Seat Ventilation (Front)</td><td>—</td><td style="color:var(--blue)">✓ Included</td></tr>
+        <tr><td>Driver Memory Seat</td><td>—</td><td style="color:var(--blue)">✓ Included</td></tr>
+        <tr><td>Premium Rear Bench</td><td>—</td><td style="color:var(--blue)">✓ Included</td></tr>
+        <tr><td colspan="3" class="section-row">SHARED ACROSS BOTH</td></tr>
+        <tr><td>Crystal OS + 15.6" Screen</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Panoramic Roof 2.072 m²</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Level 2+ Autonomous Drive</td><td>✓</td><td>✓</td></tr>
+        <tr><td>5-Star NCAP & E-NCAP</td><td>✓</td><td>✓</td></tr>
+        <tr><td>8-Year Warranty</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Free Airline Tickets (3yr)</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Free Insurance (1yr)</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Free Home Charger</td><td>✓</td><td>✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="reserve.html" class="btn-primary">Book Test Drive</a>
+  </div>
+</div>
+
+<!-- COLOURS -->
+<div class="spec-section" id="colours">
+  <div style="padding:0 0 32px;"><h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;">Available Colours</h3></div>
+</div>
+<div class="colour-gallery" id="colour-gallery" style="display:none;">
+  <div class="col-card"><div class="col-swatch" style="background:#1C2B3A;"></div><div class="col-name">Midnight Blue</div><div class="col-sub">Metallic</div></div>
+  <div class="col-card"><div class="col-swatch" style="background:#E8E8E8;"></div><div class="col-name">Crystal White</div><div class="col-sub">Pearl</div></div>
+  <div class="col-card"><div class="col-swatch" style="background:#1A1A1A;"></div><div class="col-name">Stealth Black</div><div class="col-sub">Solid</div></div>
+  <div class="col-card"><div class="col-swatch" style="background:#B5A9A0;"></div><div class="col-name">Warm Silver</div><div class="col-sub">Metallic</div></div>
+  <div class="col-card"><div class="col-swatch" style="background:#E8B4C0;"></div><div class="col-name">Sunset Pink</div><div class="col-sub">Solid — Limited</div></div>
+</div>
+
+<footer>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <p>© 2024 JuneYao Auto Malaysia · Prices are estimates subject to final confirmation</p>
+</footer>
+
+<script>
+function showVariant(id, btn){
+  document.querySelectorAll('.spec-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  const cg = document.getElementById('colour-gallery');
+  cg.style.display = id==='colours' ? 'grid' : 'none';
+}
+</script>
+</body>
+</html>

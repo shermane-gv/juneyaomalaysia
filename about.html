@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — JuneYao Auto Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root{--blue:#0A84FF;--blue-dim:#0062CC;--sky:#A8D4FF;--black:#060608;--dark:#0E0E12;--panel:#13131A;--muted:#6B7280;--white:#F0F4FF;--accent:#00E5FF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(6,6,8,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;border:2px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--blue);}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;color:var(--white);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(240,244,255,0.6);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 22px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;}
+
+.page-hero{padding:140px 60px 80px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,#06080F 0%,var(--black) 100%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(10,132,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,132,255,0.04) 1px,transparent 1px);background-size:50px 50px;}
+.label{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;position:relative;}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,8rem);letter-spacing:0.04em;position:relative;}
+.page-hero h1 span{color:var(--blue);}
+.page-hero p{color:rgba(240,244,255,0.5);font-size:0.88rem;max-width:500px;margin:16px auto 0;line-height:1.9;position:relative;}
+
+.section{padding:80px 60px;}
+.section.dark{background:var(--dark);}
+.section-inner{max-width:900px;margin:0 auto;}
+.section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);letter-spacing:0.05em;margin-bottom:24px;}
+.section h2 span{color:var(--blue);}
+.section p{font-size:0.85rem;color:rgba(240,244,255,0.55);line-height:1.95;margin-bottom:16px;}
+.label-inline{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.label-inline::before{content:'';width:20px;height:1px;background:var(--accent);}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.visual-box{background:var(--panel);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border:1px solid rgba(10,132,255,0.1);position:relative;}
+.visual-year{font-family:'Bebas Neue',sans-serif;font-size:6rem;color:rgba(10,132,255,0.08);letter-spacing:0.05em;}
+
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:40px;}
+.t-item{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.t-year{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--blue);letter-spacing:0.06em;padding-top:4px;}
+.t-content h4{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);margin-bottom:6px;}
+.t-content p{font-size:0.78rem;color:var(--muted);line-height:1.7;margin:0;}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.pillar{background:var(--panel);padding:36px;border-top:2px solid var(--blue);}
+.pillar h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.06em;margin-bottom:10px;}
+.pillar p{font-size:0.78rem;color:var(--muted);line-height:1.8;}
+
+.cta-row{display:flex;gap:16px;margin-top:32px;}
+.btn-primary{display:inline-block;background:var(--blue);color:#fff;padding:13px 32px;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background 0.3s;}
+.btn-primary:hover{background:var(--blue-dim);}
+.btn-ghost{display:inline-block;color:var(--white);text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:13px 32px;border:1px solid rgba(255,255,255,0.15);transition:all 0.3s;}
+.btn-ghost:hover{border-color:var(--blue);color:var(--accent);}
+
+footer{background:var(--panel);border-top:1px solid rgba(255,255,255,0.06);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:0.72rem;color:var(--muted);}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.7s,transform 0.7s;}
+.fade-up.visible{opacity:1;transform:none;}
+
+@media(max-width:768px){nav{padding:16px 20px;}.nav-links{display:none;}.page-hero,.section{padding-left:20px;padding-right:20px;}.two-col,.pillars{grid-template-columns:1fr;}footer{flex-direction:column;gap:12px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <ul class="nav-links">
+    <li><a href="vehicle.html">JY AIR</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="reserve.html" class="nav-cta">Book Test Drive</a>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-grid"></div>
+  <span class="label">The JuneYao Story</span>
+  <h1>FROM THE <span>SKY</span> TO THE ROAD</h1>
+  <p>JuneYao Group began as an airline. Today, we bring that same engineering precision and passenger-first philosophy to electric mobility.</p>
+</div>
+
+<section class="section fade-up">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <div class="label-inline">The Group</div>
+        <h2>JUNEYAO <span>GROUP</span></h2>
+        <p>Founded in 2005, Juneyao Airlines rapidly grew into one of China's leading commercial carriers, renowned for safety, technology, and passenger experience. The JuneYao Group's portfolio spans aviation, finance, consumer goods, and education.</p>
+        <p>In 2023, JuneYao Group entered the automotive industry with a bold ambition: to bring the comfort, safety, and technology of first-class air travel to everyday driving. JuneYao Auto was born.</p>
+      </div>
+      <div class="visual-box"><div class="visual-year">2005</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark fade-up">
+  <div class="section-inner">
+    <div class="label-inline">Our Timeline</div>
+    <h2>THE <span>JOURNEY</span></h2>
+    <div class="timeline">
+      <div class="t-item"><div class="t-year">2005</div><div class="t-content"><h4>Juneyao Airlines Founded</h4><p>Shanghai-based Juneyao Airlines launches as a private commercial carrier, growing to one of China's top domestic and international airlines.</p></div></div>
+      <div class="t-item"><div class="t-year">2023</div><div class="t-content"><h4>JuneYao Auto Established</h4><p>JuneYao Group acquires Yudo Auto and establishes JuneYao Automobile, bringing aviation engineering DNA to the electric vehicle industry.</p></div></div>
+      <div class="t-item"><div class="t-year">2024</div><div class="t-content"><h4>JY AIR Launches in Thailand</h4><p>The JY AIR makes its global debut at Thailand Motor Expo 2024 — the first JuneYao-branded electric vehicle, earning 5-star NCAP & E-NCAP safety ratings.</p></div></div>
+      <div class="t-item"><div class="t-year">2025</div><div class="t-content"><h4>Arriving in Malaysia</h4><p>JuneYao Auto expands to Malaysia, bringing the JY AIR to Kuala Lumpur with local pricing, full after-sales support, and an exclusive launch offer.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="section-inner">
+    <div class="label-inline">Our Philosophy</div>
+    <h2>THREE <span>PILLARS</span></h2>
+    <p>Everything JuneYao Auto builds is guided by three core engineering and design principles inherited from our aviation heritage.</p>
+    <div class="pillars">
+      <div class="pillar"><h3>SAFETY FIRST</h3><p>Engineered on the SKY platform with aerospace-grade structural integrity. 5-star NCAP and E-NCAP certified. Because nothing matters more than the people inside.</p></div>
+      <div class="pillar"><h3>INTELLIGENT DESIGN</h3><p>Crystal OS, Level 2+ autonomous driving, Snapdragon 8155 — the JY AIR is as smart as the devices in your pocket, and smarter on the road.</p></div>
+      <div class="pillar"><h3>FIRST CLASS COMFORT</h3><p>Inspired by business class cabins. A 2m² panoramic roof, 75% soft-touch interior, reclining seats, ambient lighting. Your commute, elevated.</p></div>
+    </div>
+    <div class="cta-row">
+      <a href="vehicle.html" class="btn-primary">Explore JY AIR</a>
+      <a href="reserve.html" class="btn-ghost">Book Test Drive</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="logo"><div class="logo-mark">JY</div><span class="logo-text">JUNEYAO AUTO MALAYSIA</span></a>
+  <p>© 2024 JuneYao Auto Malaysia Sdn. Bhd. · All rights reserved</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
